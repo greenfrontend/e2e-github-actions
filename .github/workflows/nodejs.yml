@@ -31,10 +31,10 @@ jobs:
           ${{ runner.OS }}-node-
 
     - name: Show files
-      run: ls -lah ..
+      run: ls -lah
 
     - name: Install Dependencies
-      if: steps.cache.outputs.cache-hit != 'true'
+#      if: steps.cache.outputs.cache-hit != 'true'
       run: npm install
 
     - name: Build
