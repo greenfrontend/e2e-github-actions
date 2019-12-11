@@ -30,6 +30,7 @@ jobs:
         restore-keys: |
           ${{ runner.OS }}-build-${{ env.cache-name }}-
           ${{ runner.OS }}-build-
+          ${{ runner.OS }}-node_modules-
           ${{ runner.OS }}-
 
     - name: Install Dependencies
