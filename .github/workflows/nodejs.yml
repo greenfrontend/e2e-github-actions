@@ -21,11 +21,9 @@ jobs:
       with:
         version: ${{ matrix.node_version }}
 
-    - name: Install Dependencies
-      run: npm install
-
     - name: Cache node modules
       uses: actions/cache@v1
+      id: cache
       with:
         path: node_modules
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -33,6 +31,10 @@ jobs:
           ${{ runner.OS }}-build-${{ env.cache-name }}-
           ${{ runner.OS }}-build-
           ${{ runner.OS }}-
+
+    - name: Install Dependencies
+      run: npm install
+      if: steps.cache.outputs.cache-hit != 'true'
 
     - name: Build
       run: npm build
