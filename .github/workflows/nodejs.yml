@@ -37,7 +37,7 @@ jobs:
       if: steps.cache.outputs.cache-hit != 'true'
 
     - name: Build
-      run: npm build
+      run: npm run build
 
     - name: Tests
       run: npm test
