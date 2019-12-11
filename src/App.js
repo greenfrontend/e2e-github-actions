@@ -6,9 +6,9 @@ const App = () => {
 
   return <div className="main" style={{margin: 50}}>
     <div className="button-wrapper">
-      <button onClick={() => setCount(count + 1)}>increase</button>
+      <button className="button" onClick={() => setCount(count + 1)}>increase</button>
     </div>
-    <h1>{count}</h1>
+    <h1 className="result">{count}</h1>
   </div>
 };
 

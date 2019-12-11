@@ -1,0 +1,6 @@
+{
+  "viewportWidth": 1280,
+  "viewportHeight": 720,
+  "testFiles": "./pages/**/*.*",
+  "baseUrl": "http://localhost:3000"
+}
