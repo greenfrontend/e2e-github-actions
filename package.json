@@ -13,7 +13,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "npm run cy:run",
     "eject": "react-scripts eject",
     "cy:open": "./node_modules/.bin/cypress open",
     "cy:run": "cypress run --browser chrome"
