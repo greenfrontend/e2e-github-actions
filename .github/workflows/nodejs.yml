@@ -1,4 +1,4 @@
-name: CI
+name: e2e test on React app, after push to develop branch
 
 on:
   push:
