@@ -30,15 +30,15 @@ jobs:
         restore-keys: |
           ${{ runner.OS }}-node-
 
-    - name: Show files
+    - name: Show files before
       run: ls -lah
 
     - name: Install Dependencies
 #      if: steps.cache.outputs.cache-hit != 'true'
       run: npm install
 
-    - name: Show files
-        run: ls -lah
+    - name: Show files after
+      run: ls -lah
 
     - name: Build
       run: npm run build
