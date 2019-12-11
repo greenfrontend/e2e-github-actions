@@ -25,14 +25,14 @@ jobs:
       uses: actions/cache@v1
       id: cache
       with:
-        path: ~/.npm
+        path: ./node_modules/
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.OS }}-node-
 
     - name: Install Dependencies
-      run: npm install
       if: steps.cache.outputs.cache-hit != 'true'
+      run: npm install
 
     - name: Build
       run: npm run build
