@@ -29,6 +29,7 @@ jobs:
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.OS }}-node-
+      run: ls -lah
 
     - name: Install Dependencies
       if: steps.cache.outputs.cache-hit != 'true'
