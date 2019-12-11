@@ -21,6 +21,9 @@ jobs:
       with:
         version: ${{ matrix.node_version }}
 
+    - name: Install Dependencies
+      run: npm install
+
     - name: Cache node modules
       uses: actions/cache@v1
       with:
@@ -30,9 +33,6 @@ jobs:
           ${{ runner.OS }}-build-${{ env.cache-name }}-
           ${{ runner.OS }}-build-
           ${{ runner.OS }}-
-
-    - name: Install Dependencies
-      run: npm install
 
     - name: Build
       run: npm build
