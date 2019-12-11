@@ -29,6 +29,8 @@ jobs:
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.OS }}-node-
+
+    - name: Show files
       run: ls -lah
 
     - name: Install Dependencies
