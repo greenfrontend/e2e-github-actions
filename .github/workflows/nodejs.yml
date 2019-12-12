@@ -21,6 +21,9 @@ jobs:
       with:
         version: ${{ matrix.node_version }}
 
+    - name: Show node version
+      run: node -v
+
     - name: Install Dependencies
       run: npm install
 
