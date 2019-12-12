@@ -1,7 +1,7 @@
 name: e2e test on React app, after push to develop branch
 
 on:
-  push:
+  pull_request:
     branches:
       - develop
 
@@ -21,24 +21,8 @@ jobs:
       with:
         version: ${{ matrix.node_version }}
 
-    - name: Cache node modules
-      uses: actions/cache@v1
-      id: cache
-      with:
-        path: node_modules
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.OS }}-node-
-
-    - name: Show files before
-      run: ls -lah
-
     - name: Install Dependencies
-#      if: steps.cache.outputs.cache-hit != 'true'
       run: npm install
-
-    - name: Show files after
-      run: ls -lah
 
     - name: Build
       run: npm run build
