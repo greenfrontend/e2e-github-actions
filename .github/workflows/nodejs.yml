@@ -1,28 +1,16 @@
-name: e2e test on React app, after push to develop branch
+name: Documentation
 
-on:
-  push:
-    branches:
-      - develop
+on: [push]
 
 jobs:
   build:
-    name: Build
-    runs-on: ubuntu-18.04
-    strategy:
-      matrix:
-        node_version: [12]
+    runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node_version }}
-      uses: actions/setup-node@v1
-      with:
-        version: ${{ matrix.node_version }}
-
-    - name: e2e tests
-      run: |
-        npm install
-        npm build
-        npm test
-        
+      - uses: actions/checkout@v1
+      - name: Upload Documentation to Wiki
+        uses: SwiftDocOrg/github-wiki-publish-action@v1
+        with:
+          path: "docs"
+        env:
+          GH_PERSONAL_ACCESS_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
