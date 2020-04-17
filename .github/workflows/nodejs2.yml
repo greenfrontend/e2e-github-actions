@@ -7,8 +7,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
-        run: echo 'uncomment when secrets will be added'
+      - name: Upload Documentation to Wiki
+        run: echo 'Please add GH_PERSONAL_ACCESS_TOKEN secret for uploading docs to Wiki'
+#      - uses: actions/checkout@v1
 #      - name: Upload Documentation to Wiki
 #        uses: SwiftDocOrg/github-wiki-publish-action@v1
 #        with:
