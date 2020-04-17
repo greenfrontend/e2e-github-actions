@@ -1,13 +1,14 @@
-#name: Another task
-#
-#on: [push]
-#
-#jobs:
-#  build:
-#    runs-on: ubuntu-latest
-#
-#    steps:
-#      - uses: actions/checkout@v1
+name: Another task
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+        run: echo 'uncomment when secrets will be added'
 #      - name: Upload Documentation to Wiki
 #        uses: SwiftDocOrg/github-wiki-publish-action@v1
 #        with:
