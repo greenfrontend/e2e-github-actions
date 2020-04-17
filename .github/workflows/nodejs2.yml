@@ -1,8 +1,8 @@
-name: Another task
-
-on: [push]
-
-jobs:
+#name: Another task
+#
+#on: [push]
+#
+#jobs:
 #  build:
 #    runs-on: ubuntu-latest
 #
